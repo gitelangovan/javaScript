@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<body style="text-align: center;">
+		<head></head>
+		<h3>Sorting Method</h3>
+		<div>
+			<p style="text-align: start;">Sorted Format     - [<b><span id="orgNumber"></span></b>]</p>
+			<p style="text-align: start;">Ascending Sorted  - [<b><span id="sortedNumber"></span></b>]</p>
+			<p style="text-align: start;">Descending Sorted - [<b><span id="descendArr"></span></b>]</p>
+		</div>
+
+		<!-- <script>
+			const numArr = [255,2,99,66,43,12,32,1,9,112];
+			var ascendingArr = function(a,b){
+				return a-b;
+			}
+			var descendingArr = function(a,b){
+				return b-a;
+			}
+			document.getElementById("orgNumber").innerHTML = numArr.sort();
+			document.getElementById("sortedNumber").innerHTML = numArr.sort(ascendingArr);
+			document.getElementById("descendArr").innerHTML = numArr.sort(descendingArr);
+
+		</script> -->
+
+		<script>
+			const numArr = [255,2,99,66,43,12,32,1,9,112];
+			document.getElementById("orgNumber").innerHTML = numArr.sort();
+			document.getElementById("sortedNumber").innerHTML = numArr.sort(function(a,b){ return a-b});
+			document.getElementById("descendArr").innerHTML = numArr.sort(function(a,b){ return b-a});
+		</script>
+
+		<!-- <script>
+			const numArr = [255,2,99,66,43,12,32,1,9,112];
+			document.getElementById("orgNumber").innerHTML = numArr.sort();
+			document.getElementById("sortedNumber").innerHTML = numArr.sort((a,b) => a-b);
+			document.getElementById("descendArr").innerHTML = numArr.sort((a,b) => b-a);
+		</script> -->
+
+	</body>
+</html>
+
+
