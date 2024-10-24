@@ -1,43 +1,35 @@
 <!DOCTYPE html>
 <html>
+
 	<body style="text-align: center;">
-		<head></head>
 		<h3>Sorting Method</h3>
 		<div>
-			<p style="text-align: start;">Sorted Format     - [<b><span id="orgNumber"></span></b>]</p>
-			<p style="text-align: start;">Ascending Sorted  - [<b><span id="sortedNumber"></span></b>]</p>
-			<p style="text-align: start;">Descending Sorted - [<b><span id="descendArr"></span></b>]</p>
+			<!-- Javascript do lexographic sorting method -->
+			<p>Sorting by Age: <span id="output1"></span></p>
+			<p>Sorting by Experience: <span id="output2"></span></p>
+
+			<!-- sorting by name using locale compare -->
+			<p>Sorting by Name: <span id="output3"></span></p>
+
 		</div>
 
-		<!-- <script>
-			const numArr = [255,2,99,66,43,12,32,1,9,112];
-			var ascendingArr = function(a,b){
-				return a-b;
-			}
-			var descendingArr = function(a,b){
-				return b-a;
-			}
-			document.getElementById("orgNumber").innerHTML = numArr.sort();
-			document.getElementById("sortedNumber").innerHTML = numArr.sort(ascendingArr);
-			document.getElementById("descendArr").innerHTML = numArr.sort(descendingArr);
-
-		</script> -->
-
+		<!-- Js script -->
 		<script>
-			const numArr = [255,2,99,66,43,12,32,1,9,112];
-			document.getElementById("orgNumber").innerHTML = numArr.sort();
-			document.getElementById("sortedNumber").innerHTML = numArr.sort(function(a,b){ return a-b});
-			document.getElementById("descendArr").innerHTML = numArr.sort(function(a,b){ return b-a});
+			debugger
+			const empDetails = [{ name: 'Manoj', age: 31, exp: 10, address: 'Namakkal' },
+								{ name: 'Arun', age: 28, exp: 6, address: 'Erode' },
+								{ name: 'Elangovan', age: 27, exp: 3.6, address: 'Chennai' },
+								{ name: 'Arul', age: 29, exp: 2, address: 'Coimbatore' }];			
+
+			// Populating data to dom element
+			let sort1 = JSON.stringify(empDetails.sort((a, b) => a.age - b.age));
+			let sort2 = JSON.stringify(empDetails.sort((a, b) => a.exp - b.exp));
+			let sort3 = JSON.stringify(empDetails.sort((a, b) => b.name.localeCompare(a.name)));
+
+			document.getElementById('output1').innerHTML = sort1;
+			document.getElementById('output2').innerHTML = sort2;
+			document.getElementById('output3').innerHTML = sort3;
 		</script>
-
-		<!-- <script>
-			const numArr = [255,2,99,66,43,12,32,1,9,112];
-			document.getElementById("orgNumber").innerHTML = numArr.sort();
-			document.getElementById("sortedNumber").innerHTML = numArr.sort((a,b) => a-b);
-			document.getElementById("descendArr").innerHTML = numArr.sort((a,b) => b-a);
-		</script> -->
-
 	</body>
+
 </html>
-
-
