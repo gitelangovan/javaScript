@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Bootstrap link -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script>
+
+		// Getting input from user and checking the word is palindrome or not..!
+		function palindrome() {
+			debugger
+			const incoming = (document.getElementById("text").value).toLowerCase();
+			var splitValue = incoming.split('');
+			var reversedValue = [];
+
+			for (i = 0; i < splitValue.length; i++) {
+				reversedValue.push(splitValue[i]);
+			}
+
+			if (reversedValue.join('') === incoming) {
+				document.getElementById("outPut").innerHTML = incoming.toUpperCase() + " Is a palindrome";
+			}
+			else {
+				document.getElementById("outPut").innerHTML = incoming.toUpperCase() + " Not a palindrome";
+			}
+		}
+
+		function palindrome1() {
+			debugger
+			const incoming = (document.getElementById("text").value).toLowerCase();
+			var splitValue = incoming.split('');
+			var reversedValue = "";
+
+			for (let i = splitValue.length - 1; i >= 0; i--) {
+				reversedValue += splitValue[i];
+			}
+			document.getElementById("outPut").innerHTML = reversedValue === incoming ? incoming.toUpperCase() + " Is a palindrome" : incoming.toUpperCase() + " Not a palindrome";
+		}
+
+		function palindrome2() {
+			debugger
+			var incoming = (document.getElementById("text").value).toLowerCase();
+			var rValue = incoming.split('').reverse().join('');
+			document.getElementById("outPut").innerHTML = rValue === incoming ? incoming.toUpperCase() + " Is a palindrome" : incoming.toUpperCase() + " Not a palindrome";
+		}
+	</script>
+</head>
+
+<body style="text-align: center;">
+	<h3>Checking Word is Palindrome or Not</h3>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<label>Getting Input:</label>
+				<input placeholder="Enter Any Palindrome" class="form-control" id="text">
+			</div>
+
+			<div class="col-md-4" style="margin-top:2rem;">
+				<button class="btn btn-primary" onClick="palindrome1()"> Validate</button>
+			</div>
+			<div class="col-md-4">
+				<label>Output:</label>
+				<p class="form-control" id="outPut"></p>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
