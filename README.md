@@ -1,2 +1,2 @@
 # javaScript
-Sorting numbers from ascending to descending order using sort method.
+Just Committing fun codes for hobby
